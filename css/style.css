@@ -1,0 +1,45 @@
+
+body{
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+.moon{
+    width: 260px;
+    height: 260px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    background-color: #000;
+}
+.moon::before{
+    content: "";
+    position:absolute;
+    background-color:#d9d9d9;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    animation: 2s  moon  linear infinite alternate;
+}
+@keyframes moon {
+    0%{
+        transform: translate(-50px, 50px) scale(0.9);
+        box-shadow:none;
+    }
+    50%{
+        transform: translate(0px,0px) scale(1.02);
+        background-color:#ffff;
+        box-shadow: 0 0 100px  #ffff;
+    }
+    100%{
+         transform: translateX(50px,-50px) scale(0.9);
+         box-shadow:none;
+    }
+
+}
+
